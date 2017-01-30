@@ -17,7 +17,7 @@ Add the following to your `composer.json` file:
 Then run:
 
 ```
-composer require wearejh/php-coding-standards --dev
+composer require wearejh/php-coding-standards:dev-master --dev
 ```
 
 ## Usage
