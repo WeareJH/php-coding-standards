@@ -11,7 +11,10 @@ class Jh_Sniffs_Commenting_ClassCommentSniff implements PHP_CodeSniffer_Sniff
 
     public function register()
     {
-        return [T_CLASS];
+        return [
+            T_CLASS,
+            T_INTERFACE
+        ];
     }
 
     public function process(PHP_CodeSniffer_File $phpCsFile, $stackPtr)
@@ -42,6 +45,18 @@ class Jh_Sniffs_Commenting_ClassCommentSniff implements PHP_CodeSniffer_Sniff
         }
 
         $commentStart = $tokens[$commentEnd]['comment_opener'];
+
+        $start = $commentStart;
+        while (false !== ($commentString = $phpCsFile->findNext(T_DOC_COMMENT_STRING, $start, $commentEnd))) {
+            $value = $tokens[$commentString]['content'];
+
+            if (strpos($value, 'Class ') === 0) {
+                $error = 'Class doc string not allowed - change your PHP Storm doc templates ;)';
+                $phpCsFile->addError($error, $commentStart, 'ClassNotAllowed', [$value]);
+            }
+
+            $start = $commentString + 1;
+        }
 
         $tags = $tokens[$commentStart]['comment_tags'];
         $tagLabels = [];
