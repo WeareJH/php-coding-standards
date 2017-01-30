@@ -1,0 +1,14 @@
+{
+  "name": "wearejh/php-coding-standards",
+  "description": "JH Custom PHP CS Rules",
+  "require": {
+    "php": "^7"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Aydin Hassan",
+      "email": "aydin@hotmail.co.uk"
+    }
+  ]
+}
