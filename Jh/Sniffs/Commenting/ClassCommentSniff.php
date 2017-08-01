@@ -9,6 +9,10 @@ class Jh_Sniffs_Commenting_ClassCommentSniff implements PHP_CodeSniffer_Sniff
         '@author'
     ];
 
+    private $optionalAttributes = [
+        '@magentoDataFixture'
+    ];
+
     public function register()
     {
         return [
@@ -66,7 +70,7 @@ class Jh_Sniffs_Commenting_ClassCommentSniff implements PHP_CodeSniffer_Sniff
 
         foreach ($tags as $tag) {
             $tagLabel = $tagLabels[$tag];
-            if (!in_array($tagLabel, $this->requiredAttributes, true)) {
+            if (!in_array($tagLabel, array_merge($this->requiredAttributes, $this->optionalAttributes), true)) {
                 $error = '%s tag is not allowed in class comment';
                 $data  = array($tokens[$tag]['content']);
                 $phpCsFile->addError($error, $tag, 'TagNotAllowed', $data);
