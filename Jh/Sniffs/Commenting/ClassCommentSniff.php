@@ -16,7 +16,9 @@ class ClassCommentSniff implements Sniff
     ];
 
     private $optionalAttributes = [
-        '@magentoDataFixture'
+        '@magentoDataFixture',
+        '@magentoDbIsolation',
+        '@magentoConfigFixture',
     ];
 
     public function register()
