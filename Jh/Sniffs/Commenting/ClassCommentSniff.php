@@ -1,9 +1,15 @@
 <?php
 
+namespace Jh\Sniffs\Commenting;
+
+use PHP_CodeSniffer\Sniffs\Sniff;
+use PHP_CodeSniffer\Files\File;
+use PHP_CodeSniffer\Util\Tokens;
+
 /**
  * @author Aydin Hassan <aydin@wearejh.com>
  */
-class Jh_Sniffs_Commenting_ClassCommentSniff implements PHP_CodeSniffer_Sniff
+class ClassCommentSniff implements Sniff
 {
     private $requiredAttributes = [
         '@author'
@@ -21,10 +27,10 @@ class Jh_Sniffs_Commenting_ClassCommentSniff implements PHP_CodeSniffer_Sniff
         ];
     }
 
-    public function process(PHP_CodeSniffer_File $phpCsFile, $stackPtr)
+    public function process(File $phpCsFile, $stackPtr)
     {
         $tokens = $phpCsFile->getTokens();
-        $find   = PHP_CodeSniffer_Tokens::$methodPrefixes;
+        $find   = Tokens::$methodPrefixes;
         $find[] = T_WHITESPACE;
 
         $commentEnd = $phpCsFile->findPrevious($find, $stackPtr - 1, null, true);
