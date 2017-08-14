@@ -15,7 +15,7 @@
         </properties>
     </rule>
     <rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
-    <rule ref="Jh.Commenting.ClassComment.Missing">
+    <rule ref="Jh.Commenting.ClassComment">
         <severity>5</severity>
     </rule>
 </ruleset>
