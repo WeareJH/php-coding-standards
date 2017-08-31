@@ -19,6 +19,8 @@ class ClassCommentSniff implements Sniff
         '@magentoDataFixture',
         '@magentoDbIsolation',
         '@magentoConfigFixture',
+        '@magentoAppArea',
+        '@magentoAppIsolation',
     ];
 
     public function register()
