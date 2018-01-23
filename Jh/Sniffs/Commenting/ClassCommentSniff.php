@@ -21,6 +21,7 @@ class ClassCommentSniff implements Sniff
         '@magentoConfigFixture',
         '@magentoAppArea',
         '@magentoAppIsolation',
+        '@api',
     ];
 
     public function register()
