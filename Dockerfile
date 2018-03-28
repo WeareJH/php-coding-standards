@@ -1,4 +1,4 @@
-FROM php:7.1
+FROM php:7.1-alpine
 
 ENV CODESNIFFER_VERSION 3.2.3
 
