@@ -12,7 +12,7 @@ RUN curl \
         -L \
         -o /usr/local/bin/phpcbf \
         "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/$CODESNIFFER_VERSION/phpcbf.phar" \
-    && chmod +x /usr/local/bin/phpbf
+    && chmod +x /usr/local/bin/phpcbf
 
 COPY Jh /etc/coding-standard/Jh
 
