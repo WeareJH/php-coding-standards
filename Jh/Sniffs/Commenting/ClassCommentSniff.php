@@ -12,7 +12,6 @@ use PHP_CodeSniffer\Util\Tokens;
 class ClassCommentSniff implements Sniff
 {
     private $requiredAttributes = [
-        '@author'
     ];
 
     private $optionalAttributes = [
@@ -104,16 +103,5 @@ class ClassCommentSniff implements Sniff
                 $phpCsFile->addError($error, $pointer + 2, 'TagNotValid', [$requiredAttribute, $content]);
             }
         }
-    }
-
-    private function validateAuthor($value)
-    {
-        $res = preg_match('/^(?P<name>[- .,\p{L}\p{N}\'’"()]+) <(?P<email>.+?)>$/u', $value, $matches);
-
-        if (!$res) {
-            return false;
-        }
-
-        return false !== filter_var($matches['email'], FILTER_VALIDATE_EMAIL);
     }
 }
