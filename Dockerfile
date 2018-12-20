@@ -16,4 +16,4 @@ RUN curl \
 
 COPY Jh /etc/coding-standard/Jh
 
-CMD ["/usr/local/bin/phpcs", "--standard=/etc/coding-standard/Jh", "-s", "/mnt"]
+CMD ["/usr/local/bin/phpcs", "--standard=/etc/coding-standard/Jh", "--extensions=php", "-s", "/mnt"]
