@@ -42,7 +42,6 @@ class ClassCommentSniff implements Sniff
         if ($tokens[$commentEnd]['code'] !== T_DOC_COMMENT_CLOSE_TAG
             && $tokens[$commentEnd]['code'] !== T_COMMENT
         ) {
-            $phpCsFile->addError('Missing class doc comment', $stackPtr, 'Missing');
             $phpCsFile->recordMetric($stackPtr, 'Class has doc comment', 'no');
             return;
         }
