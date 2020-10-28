@@ -19,4 +19,10 @@
         <severity>5</severity>
     </rule>
     <rule ref="Generic.PHP.RequireStrictTypes"/>
+    <rule ref="Generic.Formatting.MultipleStatementAlignment">
+        <properties>
+            <property name="maxPadding" value="50"/>
+            <property name="error" value="true"/>
+        </properties>
+    </rule>
 </ruleset>
