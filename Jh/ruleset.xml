@@ -18,4 +18,5 @@
     <rule ref="Jh.Commenting.ClassComment">
         <severity>5</severity>
     </rule>
+    <rule ref="Generic.PHP.RequireStrictTypes"/>
 </ruleset>
